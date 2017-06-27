@@ -20,19 +20,19 @@ class Parcel {
     mSpeed = speed;
   }
 
-  public int calculateVolume() {
+  public void calculateVolume() {
     mVolume = mLength * mWidth * mHeight;
-    return mVolume;
+    //return mVolume;
   }
 
-  public int calculateSurfaceArea() {
+  public void calculateSurfaceArea() {
     mSurfaceArea = ((mLength * mHeight) * 4) + ((mLength * mWidth) * 2);
-    return mSurfaceArea;
+    //return mSurfaceArea;
   }
 
-  public int calculateCost() {
+  public void calculateCost() {
     //baseline shipping cost
-    mCost = mVolume*3 + mWeight*2 + mDistance*2;
+    mCost = (mVolume + mWeight) / 10;
     //add gift wrap
     if (mGiftWrap == true) {
       mCost *= 2;
@@ -45,7 +45,7 @@ class Parcel {
     } else {
       mCost = mCost + mDistance;
     }
-    
+
   }
 
 }
